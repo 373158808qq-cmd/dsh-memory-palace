@@ -1,6 +1,6 @@
 {
-  "name": "dsh-memory-app",
-  "version": "0.10.3",
+  "name": "dsh-memory-palace",
+  "version": "0.11.0",
   "description": "懂你记忆系统：每轮注入画像/长期记忆/协作规矩 + 台账纪律 + 本地语义检索 + 会话转写 + 一键初始化 + 设置页维护作业。",
   "type": "module",
   "main": "lib/index.js",

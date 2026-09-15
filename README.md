@@ -1,4 +1,4 @@
-# dsh-memory-app
+# dsh-memory-palace
 
 给 [DeepSeek Harness](https://github.com/deepseek-ai) 用的**跨会话记忆插件**：
 换一个会话，它还记得你是谁、你的项目在哪、哪些坑踩过 —— 不用你再讲一遍。
@@ -47,7 +47,7 @@
 ```bash
 # 1) 拿到 tarball（从 Releases 下载，或自己 npm pack）
 # 2) 装进 profile（路径写绝对路径 —— 相对路径会被当成 profile 目录下的路径）
-dsh plugin --profile web add /绝对路径/dsh-memory-app-0.10.0.tgz
+dsh plugin --profile web add /绝对路径/dsh-memory-palace-0.10.0.tgz
 
 # 3) 重启 DSH（这一步只有你能做）
 ```
@@ -55,7 +55,7 @@ dsh plugin --profile web add /绝对路径/dsh-memory-app-0.10.0.tgz
 装完打开 `设置 → 记忆`，页面上应该出现「记忆系统」那一列卡片。
 
 > 本包**还没发到 npm**，所以用 tarball 装。
-> 回退/卸载：`dsh plugin --profile web remove dsh-memory-app` → 再装回旧版本 tarball → 重启。
+> 回退/卸载：`dsh plugin --profile web remove dsh-memory-palace` → 再装回旧版本 tarball → 重启。
 
 ---
 

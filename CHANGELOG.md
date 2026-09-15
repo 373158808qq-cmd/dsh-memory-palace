@@ -4,6 +4,13 @@
 > ★0.9.5 之前是内部迭代、没对外发过★，所以更早的条目只点到版本与主题，不编细节。
 > 版本号与 `_dist/` 里的 tarball 一一对应。
 
+## 0.11.0 — 2026-09-16 · ★改名：dsh-memory-app → dsh-memory-palace★
+
+- **包名、插件 id、前端模块 id、路由前缀、仓库名，全部统一成 `dsh-memory-palace`**（原先包叫 `dsh-memory-app`、仓库叫 `dsh-memory-palace`，两个名字）。
+- 连带改的：`window.__ModuleLoader__` 的 id（含 `-embedder`／`-sop`／`-init` 三个子项）、路由 `/dsh-memory-palace/*`、日志前缀、profile 的 `dependencies` 与 `dsh.profile.bundles`。
+- **这是破坏性改名**：装了旧版的要先卸旧装新（`dsh plugin --profile web remove dsh-memory-app` → `add dsh-memory-palace-0.11.0.tgz`），**并且必须重启 DSH**。
+- 记忆库（`~/.dsh-memory/`）里的东西**一个字节都没动** —— 改名只影响插件这一层。
+
 ## 0.10.3 — 2026-09-16 · 补擦：0.10.2 漏掉的私人注释
 
 - 0.10.2 只删了**体检器退役清单数组**里那几条，**别处的注释里还留着**同一批字样
@@ -75,7 +82,7 @@
 - 新增 `lib/tools/root.mjs`：根目录定位改成"**先问、后猜**"——
   `--root` > `~/.dsh-memory/init.json`（初始化时记下的）> 从当前目录往上找 > **如实说"不知道"**（绝不拿 cwd 凑合）。
 - 新增 `lib/maintain.mjs` + `lib/maintain-cli.mjs`（`list` / `where` / `run <id|all>`）与两条路由
-  `/dsh-memory-app/maintain/list`、`/maintain/run`。
+  `/dsh-memory-palace/maintain/list`、`/maintain/run`。
 - 设置页新增**「维护」卡**：七行作业、每行一个按钮，输出**原样展开**；每条都写明"退出码是什么意思"
   （非 0 不一定是坏了 —— 体检器/裁决台账是"有待你裁的条目"）。
 - **修**：`budget` 在没有插件源码的机器上会崩（它去读 `<工作区>/plugins/…/index.js`）→ 改成明说"这几项跳过"。
@@ -105,7 +112,7 @@
 
 - **根因**：客户端代码里读 `ctx.remote`，而 `remote` 不是 Cordis 服务 → 代理抛
   `cannot get property "remote" without inject`，异常又被 Promise 吞掉 → 点了**没有任何反应**。
-- 改成**宿主侧建会话 + 投递**：`POST /dsh-memory-app/init/session`（用 DSH 自己的 `ctx.sessionController`），
+- 改成**宿主侧建会话 + 投递**：`POST /dsh-memory-palace/init/session`（用 DSH 自己的 `ctx.sessionController`），
   浏览器只负责把新会话切到前台；整条链加外层 `catch`，**每一步都写到卡片日志上**。
 - 取服务一律走 `ctx.get()`（它只返回 undefined、不抛）。
 
