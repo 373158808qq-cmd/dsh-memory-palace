@@ -1,0 +1,13 @@
+dsh-memory-app
+Copyright 2026 373158808qq-cmd
+
+This product is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full text.
+
+This product includes the following third-party software:
+
+  dsh-persist
+  Copyright (c) 2026 ten
+  Licensed under the MIT License.
+  Vendored, unmodified, at lib/vendor/dsh-persist/
+  Full license text: lib/vendor/dsh-persist/LICENSE

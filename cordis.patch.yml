@@ -1,0 +1,5 @@
+# dsh-memory-app bundle patch layer.
+# Applied when a profile lists this bundle in its `dsh.profile.bundles`.
+- insert:
+    - id: dsh-memory-app
+      name: dsh-memory-app
